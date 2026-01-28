@@ -1,5 +1,6 @@
 use_directory = "./uploads"
 port = 4000
+base_url = ""
 
 [[users]]
 name = "user"

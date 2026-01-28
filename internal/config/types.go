@@ -4,6 +4,7 @@ package config
 type Config struct {
 	UseDirectory string `toml:"use_directory"`
 	Port         int    `toml:"port"`
+	BaseUrl      string `toml:"base_url"`
 	Users        []User `toml:"users"`
 }
 

@@ -1,9 +1,9 @@
 {{define "navbar.html"}}
 <div class="navbar">
-    <a href="/"><h1>Locara</h1></a>
+    <a href="{{.Cfg.BaseUrl}}/"><h1>Locara</h1></a>
     <span>|</span>
-    <a href="/">Index</a>
-    <a href="/upload">Upload</a>
+    <a href="{{.Cfg.BaseUrl}}/">Index</a>
+    <a href="{{.Cfg.BaseUrl}}/upload">Upload</a>
 
     <div class="theme-sel">
         <div class="theme-btn"

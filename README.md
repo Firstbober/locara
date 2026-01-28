@@ -31,6 +31,7 @@ Create a `config.toml` file:
 ```toml
 use_directory = "./uploads"
 port = 4000
+base_url = "" # i.e. when running under /locara and not /
 
 [[users]]
 name = "username"

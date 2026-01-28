@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locara - Upload Archive</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <script src="/static/js/app.js"></script>
+    <link rel="stylesheet" href="{{.Cfg.BaseUrl}}/static/css/style.css">
+    <script src="{{.Cfg.BaseUrl}}/static/js/app.js"></script>
 </head>
 <body>
     {{template "navbar.html" .}}
     <main>
         <div class="upload">
-            <form action="/api/archive/create" method="post" enctype="multipart/form-data">
+            <form action="{{.Cfg.BaseUrl}}/api/archive/create" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <legend>File info:</legend>
                     <label for="ar_name">Name:</label>

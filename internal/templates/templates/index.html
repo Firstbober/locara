@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locara - Archive Server</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <script src="/static/js/app.js"></script>
+    <link rel="stylesheet" href="{{.Cfg.BaseUrl}}/static/css/style.css">
+    <script src="{{.Cfg.BaseUrl}}/static/js/app.js"></script>
 </head>
 <body>
     {{template "navbar.html" .}}
@@ -42,8 +42,8 @@
                                 <td>{{.Author}}</td>
                                 <td>{{.Uploader}}</td>
                                 <td>
-                                    <a href="/api/archive/{{.ID}}">
-                                        <img src="/static/img/download.png" alt="Download" />
+                                    <a href="{{$.Cfg.BaseUrl}}/api/archive/{{.ID}}">
+                                        <img src="{{$.Cfg.BaseUrl}}/static/img/download.png" alt="Download" />
                                     </a>
                                 </td>
                             </tr>
