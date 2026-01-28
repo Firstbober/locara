@@ -1,0 +1,6 @@
+use_directory = "./uploads"
+port = 4000
+
+[[users]]
+name = "user"
+auth = "authentication"
