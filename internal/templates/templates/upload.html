@@ -1,0 +1,55 @@
+{{define "upload.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locara - Upload Archive</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/app.js"></script>
+</head>
+<body>
+    {{template "navbar.html" .}}
+    <main>
+        <div class="upload">
+            <form action="/api/archive/create" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>File info:</legend>
+                    <label for="ar_name">Name:</label>
+                    <input type="text" id="ar_name" name="ar_name" required />
+
+                    <label for="ar_dated">Dated on:</label>
+                    <input type="date" id="ar_dated" name="ar_dated" required />
+
+                    <label for="ar_type">Type:</label>
+                    <select id="ar_type" name="ar_type" required>
+                        <option value="archive">Archive</option>
+                        <option value="video">Video</option>
+                        <option value="sound">Sound</option>
+                        <option value="executable">Executable</option>
+                        <option value="code">Code</option>
+                        <option value="image">Image</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="ar_author">Author:</label>
+                    <input type="text" id="ar_author" name="ar_author" required />
+
+                    <label for="ar_file">File:</label>
+                    <input type="file" name="ar_file" id="ar_file" required />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Submission:</legend>
+
+                    <label for="ar_auth_code">Authorization code(important):</label>
+                    <input type="text" id="ar_auth_code" name="ar_auth_code" required />
+                </fieldset>
+
+                <input type="submit" value="Send" />
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

@@ -1,0 +1,22 @@
+{{define "error.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locara - Error</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/app.js"></script>
+</head>
+<body>
+    {{template "navbar.html" .}}
+    <main>
+        <div class="error">
+            <h1>Error</h1>
+            <p>An error occurred. Please try again.</p>
+            <a href="/">Return to index</a>
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

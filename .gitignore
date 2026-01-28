@@ -26,3 +26,7 @@ uploads/
 # OS specific files
 .DS_Store
 Thumbs.db
+
+locara
+
+!cmd/locara

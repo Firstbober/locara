@@ -1,0 +1,296 @@
+:root {
+    --color-1: #26251c;
+    --color-2: #51493d;
+    --color-3: #7c6c5e;
+    --color-4: #e8dab2;
+    --color-5: #cd4c3b;
+    --color-6: #934041;
+    --color-7: #593447;
+    --color-8: #6d4e66;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar {
+    background-color: var(--color-1);
+    color: var(--color-4);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1em;
+    padding: 0px;
+}
+
+.navbar a {
+    color: var(--color-4);
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.navbar a:hover {
+    background-color: var(--color-3);
+    text-decoration: none;
+}
+
+.theme-sel {
+    display: flex;
+    gap: 0.5em;
+    margin-left: auto;
+}
+
+.theme-btn {
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    border: 2px solid var(--color-3);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.theme-btn:active {
+    transform: scale(0.95);
+}
+
+main {
+    padding: 2em;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.files {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+table a {
+    color: var(--color-4);
+}
+
+table,
+th,
+td {
+    border: 2px solid var(--color-1);
+    color: var(--color-4);
+    padding: 8px 12px;
+}
+
+th {
+    background-color: var(--color-1);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: var(--color-3);
+}
+
+tr td:first-child {
+    width: 200px;
+}
+
+tr td:last-child {
+    width: 60px;
+    text-align: center;
+}
+
+.year-sep {
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: var(--color-3);
+    display: flex;
+    align-items: center;
+    width: 40%;
+    gap: 1em;
+}
+
+.year-sep hr {
+    display: block;
+    width: 100%;
+    border: 2px solid var(--color-3);
+    opacity: 0.5;
+}
+
+.tcont {
+    position: relative;
+    width: 80%;
+    margin-bottom: 2em;
+}
+
+.twrap {
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+img {
+    height: 32px;
+    width: 32px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.gencont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 2em auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border: 2px solid var(--color-1);
+}
+
+legend {
+    color: var(--color-4);
+    font-weight: bold;
+    padding: 0 0.5em;
+}
+
+fieldset label {
+    margin-top: 0.5em;
+    color: var(--color-4);
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+    border: 2px solid var(--color-1);
+    background-color: var(--color-2);
+    color: var(--color-4);
+    height: 2.5em;
+    padding: 0 1em;
+    font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-3);
+}
+
+input[type="file"] {
+    background-color: var(--color-2);
+    color: var(--color-4);
+    padding: 0.5em;
+    border: 2px dashed var(--color-1);
+}
+
+input[type="submit"] {
+    background-color: var(--color-5);
+    color: var(--color-4);
+    border: none;
+    height: 2.5em;
+    padding: 0 2em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-6);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.error {
+    text-align: center;
+    padding: 2em;
+}
+
+.error h1 {
+    color: var(--color-5);
+    font-size: 3em;
+    margin: 0;
+}
+
+.error p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+.error a {
+    color: var(--color-4);
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: var(--color-1);
+}
+
+.error a:hover {
+    background-color: var(--color-3);
+}
+
+@media screen and (max-width: 1000px) {
+    .tcont {
+        width: 95%;
+    }
+
+    .year-sep {
+        width: 90%;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+    }
+}

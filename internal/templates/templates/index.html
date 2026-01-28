@@ -1,0 +1,60 @@
+{{define "index.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locara - Archive Server</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/app.js"></script>
+</head>
+<body>
+    {{template "navbar.html" .}}
+    <main>
+        <div class="files">
+            {{range $year, $entries := groupByYear .Archives}}
+            <div class="gencont">
+                <div class="year-sep">
+                    {{$year}}
+                    <hr />
+                </div>
+
+                <div class="tcont">
+                    <div class="twrap">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Dated on</th>
+                                <th>Size</th>
+                                <th>Type</th>
+                                <th>Uploaded on</th>
+                                <th>Author</th>
+                                <th>Uploader</th>
+                                <th>Download</th>
+                            </tr>
+                            {{range $entries}}
+                            <tr>
+                                <td>{{.Name}}</td>
+                                <td>{{.DatedOn}}</td>
+                                <td>{{prettyBytes .SizeBytes}}</td>
+                                <td>{{.Type}}</td>
+                                <td>{{.UploadedOn.Format "Mon Jan 2 2006"}}</td>
+                                <td>{{.Author}}</td>
+                                <td>{{.Uploader}}</td>
+                                <td>
+                                    <a href="/api/archive/{{.ID}}">
+                                        <img src="/static/img/download.png" alt="Download" />
+                                    </a>
+                                </td>
+                            </tr>
+                            {{end}}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

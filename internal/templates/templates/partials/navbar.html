@@ -1,0 +1,21 @@
+{{define "navbar.html"}}
+<div class="navbar">
+    <a href="/"><h1>Locara</h1></a>
+    <span>|</span>
+    <a href="/">Index</a>
+    <a href="/upload">Upload</a>
+
+    <div class="theme-sel">
+        <div class="theme-btn"
+             style="background-color: #26251c"
+             onclick="setTheme('default')"
+             title="Default theme">
+        </div>
+        <div class="theme-btn"
+             style="background-color: #101521"
+             onclick="setTheme('ayu_mirage')"
+             title="Ayu Mirage theme">
+        </div>
+    </div>
+</div>
+{{end}}
