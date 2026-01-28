@@ -36,9 +36,15 @@ func IndexHandler(tmpl *template.Template, cfg *config.Config) http.HandlerFunc 
 }
 
 // UploadHandler renders the upload form page.
-func UploadHandler(tmpl *template.Template) http.HandlerFunc {
+func UploadHandler(tmpl *template.Template, cfg *config.Config) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		if err := renderTemplate(w, tmpl, "upload.html", nil); err != nil {
+		data := struct {
+			Cfg *config.Config
+		}{
+			Cfg: cfg,
+		}
+
+		if err := renderTemplate(w, tmpl, "upload.html", data); err != nil {
 			log.Printf("[ERROR] Failed to render template: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
 			return
@@ -47,9 +53,15 @@ func UploadHandler(tmpl *template.Template) http.HandlerFunc {
 }
 
 // ErrorHandler renders an error page.
-func ErrorHandler(tmpl *template.Template) http.HandlerFunc {
+func ErrorHandler(tmpl *template.Template, cfg *config.Config) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		if err := renderTemplate(w, tmpl, "error.html", nil); err != nil {
+		data := struct {
+			Cfg *config.Config
+		}{
+			Cfg: cfg,
+		}
+
+		if err := renderTemplate(w, tmpl, "error.html", data); err != nil {
 			log.Printf("[ERROR] Failed to render template: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
 			return

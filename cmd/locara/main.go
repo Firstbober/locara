@@ -47,8 +47,8 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("GET /", loggingMiddleware(handlers.IndexHandler(tmpl, cfg)))
-	mux.HandleFunc("GET /upload", loggingMiddleware(handlers.UploadHandler(tmpl)))
-	mux.HandleFunc("GET /error", loggingMiddleware(handlers.ErrorHandler(tmpl)))
+	mux.HandleFunc("GET /upload", loggingMiddleware(handlers.UploadHandler(tmpl, cfg)))
+	mux.HandleFunc("GET /error", loggingMiddleware(handlers.ErrorHandler(tmpl, cfg)))
 	mux.HandleFunc("POST /api/archive/create", loggingMiddleware(func(w http.ResponseWriter, r *http.Request) {
 		handlers.CreateArchiveHandler(w, r, cfg)
 	}))
